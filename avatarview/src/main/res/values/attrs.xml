@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TinderRecyclerView">
+        <attr name="spanCount" format="integer" />
+        <attr name="aspectRatio" format="float" />
+        <attr name="numberColoum" format="integer"/>
+    </declare-styleable>
+</resources>
