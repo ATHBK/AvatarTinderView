@@ -41,7 +41,7 @@ Add this to your module's `build.gradle` file:
 
 ```gradle
 dependencies {
-	compile 'com.github.ATHBK:IndicatorView:v1.1.4'
+	compile 'com.github.ATHBK:AvatarTinderView:v1.0'
 }
 ```
 
@@ -65,7 +65,7 @@ To use this AvatarTinderView in your layout simply copy and paste the xml below.
  	....
 	app:spanCount="2"
 	app:aspectRatio="1f"
-  app:numberColoum="3"
+  	app:numberColoum="3"
 ```
 ---
 
@@ -79,7 +79,7 @@ How to use in .
 
 ```java	
 	AvatarAdapter adapter = new AvatarAdapter(this, listString);
-  recyclerView.initRecyclerView(this, adapter);
+  	recyclerView.initRecyclerView(this, adapter);
 ```
 
 ---
