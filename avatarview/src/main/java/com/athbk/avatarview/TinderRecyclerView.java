@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.AttributeSet;
@@ -35,10 +36,12 @@ public class TinderRecyclerView extends RecyclerView {
 
     public TinderRecyclerView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        init(context, attrs, 0);
     }
 
     public TinderRecyclerView(Context context, @Nullable AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        init(context, attrs, defStyle);
     }
 
     private void init(Context context, AttributeSet attrs, int defStyle){
@@ -60,7 +63,6 @@ public class TinderRecyclerView extends RecyclerView {
                 }
             }
         }, column, spectAtio);
-        spannedGridLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         setLayoutManager(spannedGridLayoutManager);
         setAdapter(adapter);
 

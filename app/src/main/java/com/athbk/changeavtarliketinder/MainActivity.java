@@ -37,6 +37,15 @@ public class MainActivity extends AppCompatActivity {
         listString.add("https://tapchianhdep.com/wp-content/uploads/2016/07/girl-xinh-11.jpg");
         listString.add("http://sohanews.sohacdn.com/2016/photo-7-1467618024092.jpg");
         listString.add("http://cms.kienthuc.net.vn/zoom/1000/uploaded/manhtu/2015_12_21/tl/hot-girl-xinh-dep-khien-ai-ngam-cung-muon-phau-thuat-tham-my-hinh-9.jpg");
+        listString.add("http://cms.kienthuc.net.vn/zoom/1000/uploaded/manhtu/2015_12_21/tl/hot-girl-xinh-dep-khien-ai-ngam-cung-muon-phau-thuat-tham-my-hinh-9.jpg");
+        listString.add("http://cms.kienthuc.net.vn/zoom/1000/uploaded/manhtu/2015_12_21/tl/hot-girl-xinh-dep-khien-ai-ngam-cung-muon-phau-thuat-tham-my-hinh-9.jpg");
+        listString.add("http://cms.kienthuc.net.vn/zoom/1000/uploaded/manhtu/2015_12_21/tl/hot-girl-xinh-dep-khien-ai-ngam-cung-muon-phau-thuat-tham-my-hinh-9.jpg");
+        listString.add("http://cms.kienthuc.net.vn/zoom/1000/uploaded/manhtu/2015_12_21/tl/hot-girl-xinh-dep-khien-ai-ngam-cung-muon-phau-thuat-tham-my-hinh-9.jpg");
+        listString.add("http://cms.kienthuc.net.vn/zoom/1000/uploaded/manhtu/2015_12_21/tl/hot-girl-xinh-dep-khien-ai-ngam-cung-muon-phau-thuat-tham-my-hinh-9.jpg");
+        listString.add("http://cms.kienthuc.net.vn/zoom/1000/uploaded/manhtu/2015_12_21/tl/hot-girl-xinh-dep-khien-ai-ngam-cung-muon-phau-thuat-tham-my-hinh-9.jpg");
+        listString.add("http://cms.kienthuc.net.vn/zoom/1000/uploaded/manhtu/2015_12_21/tl/hot-girl-xinh-dep-khien-ai-ngam-cung-muon-phau-thuat-tham-my-hinh-9.jpg");
+        listString.add("http://cms.kienthuc.net.vn/zoom/1000/uploaded/manhtu/2015_12_21/tl/hot-girl-xinh-dep-khien-ai-ngam-cung-muon-phau-thuat-tham-my-hinh-9.jpg");
+        listString.add("http://cms.kienthuc.net.vn/zoom/1000/uploaded/manhtu/2015_12_21/tl/hot-girl-xinh-dep-khien-ai-ngam-cung-muon-phau-thuat-tham-my-hinh-9.jpg");
 
         AvatarAdapter adapter = new AvatarAdapter(this, listString);
         recyclerView.initRecyclerView(this, adapter);

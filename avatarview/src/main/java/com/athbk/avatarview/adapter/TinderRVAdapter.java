@@ -1,6 +1,7 @@
 package com.athbk.avatarview.adapter;
 
 import android.support.v4.view.MotionEventCompat;
+import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.view.MotionEvent;
 import android.view.View;
@@ -50,6 +51,7 @@ public abstract class TinderRVAdapter<T, VH extends ItemVH> extends RecyclerView
                 return false;
             }
         });
+
     }
 
     @Override

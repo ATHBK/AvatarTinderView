@@ -24,7 +24,7 @@ import java.util.List;
  * A {@link RecyclerView.LayoutManager} which displays a regular grid (i.e. all cells are the same
  * size) and allows simultaneous row & column spanning.
  */
-public class SpannedGridLayoutManager extends GridLayoutManager {
+public class SpannedGridLayoutManager extends RecyclerView.LayoutManager {
 
     private GridSpanLookup spanLookup;
     private int columns = 1;
@@ -43,7 +43,7 @@ public class SpannedGridLayoutManager extends GridLayoutManager {
     private final Rect itemDecorationInsets = new Rect();
 
     public SpannedGridLayoutManager(Context context, GridSpanLookup spanLookup, int columns, float cellAspectRatio) {
-        super(context, columns);
+//        super(context, columns, VERTICAL, false);
         this.spanLookup = spanLookup;
         this.columns = columns;
         this.cellAspectRatio = cellAspectRatio;
