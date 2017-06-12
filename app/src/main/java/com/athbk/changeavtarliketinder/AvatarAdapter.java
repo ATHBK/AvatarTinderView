@@ -5,34 +5,47 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.athbk.avatarview.adapter.ItemVH;
 import com.athbk.avatarview.adapter.TinderRVAdapter;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by athbk on 5/26/17.
  */
 
-public class AvatarAdapter extends TinderRVAdapter<String, AvatarAdapter.AvatarVH> {
+public class AvatarAdapter extends TinderRVAdapter<DataModel, AvatarAdapter.AvatarVH> {
 
     List<Integer> listInt;
     List<String> listString;
+    List<DataModel> listData;
     Context context;
 
-    public AvatarAdapter(Context context, List<String> list) {
-        this.listString = list;
+    public AvatarAdapter(Context context, List<DataModel> list) {
+        this.listData = list;
         this.context = context;
     }
 
+//    public AvatarAdapter(Context context, List<String> list) {
+//        this.listString = list;
+//        this.context = context;
+//        listInt = new ArrayList<>();
+//        for (int i=0; i< listString.size(); i++){
+//            listInt.add(i);
+//        }
+//    }
+
     @Override
-    protected List<String> getListItem() {
-        return listString;
+    protected List<DataModel> getListItem() {
+        return listData;
     }
 
     @Override
@@ -44,33 +57,45 @@ public class AvatarAdapter extends TinderRVAdapter<String, AvatarAdapter.AvatarV
     @Override
     protected void onBindItemViewHolder(AvatarVH holder, int position) {
 //        holder.imageView.setImageResource(listString.get(position));
-        Picasso.with(context).load(listString.get(position)).into(holder.imageView);
-
+        Picasso.with(context).load(listData.get(position).getLogo()).into(holder.imageView);
+        Log.e("TAG", ""+position);
+        Log.e("IMAGE", ""+ listData.get(position).getLogo());
+        holder.tv.setText(""+listData.get(position).getStt());
     }
 
     class AvatarVH extends ItemVH {
 
         FrameLayout layout;
         ImageView imageView;
+        Button btnDelete;
+        TextView tv;
 
         public AvatarVH(View itemView) {
             super(itemView);
             imageView = (ImageView) itemView.findViewById(R.id.imageView);
             layout = (FrameLayout) itemView.findViewById(R.id.layout);
+            tv = (TextView) itemView.findViewById(R.id.tv);
+            btnDelete = (Button) itemView.findViewById(R.id.btnDelete);
+            btnDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onItemDismiss(getLayoutPosition());
+                }
+            });
         }
 
         @Override
         public void onItemSelected() {
             super.onItemSelected();
             layout.setAlpha(0.5f);
-            Log.e("DRAG", "DRAG");
+//            Log.e("DRAG", "DRAG");
         }
 
         @Override
         public void onItemClear() {
             super.onItemClear();
             layout.setAlpha(1f);
-            Log.e("FINISH DRAG", "FINISH DRAG");
+//            Log.e("FINISH DRAG", "FINISH DRAG");
 
         }
     }

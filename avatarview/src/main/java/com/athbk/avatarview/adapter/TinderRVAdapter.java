@@ -64,7 +64,12 @@ public abstract class TinderRVAdapter<T, VH extends ItemVH> extends RecyclerView
     public boolean onItemMove(int fromPosition, int toPosition) {
         if (getListItem() == null) return false;
         Collections.swap(getListItem(), fromPosition, toPosition);
-        notifyItemMoved(fromPosition, toPosition);
+        if (toPosition == 0 || toPosition == 1){
+            notifyDataSetChanged();
+        }
+        else {
+            notifyItemMoved(fromPosition, toPosition);
+        }
         return true;
     }
 
