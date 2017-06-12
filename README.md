@@ -41,7 +41,7 @@ Add this to your module's `build.gradle` file:
 
 ```gradle
 dependencies {
-	compile 'com.github.ATHBK:AvatarTinderView:v1.1'
+	compile 'com.github.ATHBK:AvatarTinderView:v1.2'
 }
 ```
 
