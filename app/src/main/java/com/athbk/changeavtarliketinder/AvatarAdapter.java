@@ -29,6 +29,8 @@ public class AvatarAdapter extends TinderRVAdapter<DataModel, AvatarAdapter.Avat
     List<DataModel> listData;
     Context context;
 
+    IFinishDrag iFinishDrag;
+
     public AvatarAdapter(Context context, List<DataModel> list) {
         this.listData = list;
         this.context = context;
@@ -96,7 +98,14 @@ public class AvatarAdapter extends TinderRVAdapter<DataModel, AvatarAdapter.Avat
             super.onItemClear();
             layout.setAlpha(1f);
 //            Log.e("FINISH DRAG", "FINISH DRAG");
+            if (iFinishDrag != null){
+                iFinishDrag.updateListData((ArrayList<DataModel>) getListItem());
+            }
 
         }
+    }
+
+    public void setiFinishDrag(IFinishDrag iFinishDrag) {
+        this.iFinishDrag = iFinishDrag;
     }
 }

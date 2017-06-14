@@ -3,6 +3,7 @@ package com.athbk.avatarview.adapter;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,13 +64,15 @@ public abstract class TinderRVAdapter<T, VH extends ItemVH> extends RecyclerView
     @Override
     public boolean onItemMove(int fromPosition, int toPosition) {
         if (getListItem() == null) return false;
-        Collections.swap(getListItem(), fromPosition, toPosition);
-        if (toPosition == 0 || toPosition == 1){
-            notifyDataSetChanged();
-        }
-        else {
+        Log.e("fromPosition: "  + fromPosition, "toPosition: " + toPosition);
+//        Collections.swap(getListItem(), fromPosition, toPosition);
+        moveList(getListItem(), fromPosition, toPosition);
+//        if (toPosition == 0 || toPosition == 1){
+//            notifyDataSetChanged();
+//        }
+//        else {
             notifyItemMoved(fromPosition, toPosition);
-        }
+//        }
         return true;
     }
 
@@ -82,5 +85,13 @@ public abstract class TinderRVAdapter<T, VH extends ItemVH> extends RecyclerView
 
     public void setDragStartListener(OnStartDragListener mDragStartListener) {
         this.mDragStartListener = mDragStartListener;
+    }
+
+    public void moveList(List<T> list, int fromToPosition, int toPosition){
+        if (list == null || list.size() < fromToPosition + 1 || list.size() < toPosition + 1) return;
+
+        T model = list.get(fromToPosition);
+        list.remove(fromToPosition);
+        list.add(toPosition, model);
     }
 }

@@ -2,6 +2,7 @@ package com.athbk.changeavtarliketinder;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.athbk.avatarview.TinderRecyclerView;
 
@@ -77,5 +78,14 @@ public class MainActivity extends AppCompatActivity {
 
         AvatarAdapter adapter = new AvatarAdapter(this, listData);
         recyclerView.initRecyclerView(this, adapter);
+
+        adapter.setiFinishDrag(new IFinishDrag() {
+            @Override
+            public void updateListData(ArrayList<DataModel> listData) {
+                for (int i=0; i< listData.size(); i++){
+                    Log.e("TAG", "" + i + "/"+ listData.get(i).getLogo());
+                }
+            }
+        });
     }
 }
