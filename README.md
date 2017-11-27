@@ -1,3 +1,5 @@
+[![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-AvatarTinderView-green.svg?style=flat )]( https://android-arsenal.com/details/1/6494 )
+
 # Avatar Tinder View
 Avatar Tinder View is a library that allows you to create a view for change avatar like app tinder.
 
